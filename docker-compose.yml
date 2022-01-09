@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  redis:
+    container_name: 'docker-count-redis'
+    image: "redis"
+    expose:
+      - '6379'
+    ports:
+      - '6379:6379'
+  mysql:
+    container_name: 'docker-todo-mysql'
+    image: 'mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=docker_todo_list
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
