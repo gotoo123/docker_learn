@@ -3,7 +3,7 @@ var router = express.Router();
 const Redis = require('ioredis');
 
 const redis = new Redis({
-  host: '127.0.0.1',
+  host: process.env.NODE_ENV === 'docker' ? 'docker-count-redis' : '127.0.0.1',
   port: 6379
 })
 

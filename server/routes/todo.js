@@ -4,7 +4,7 @@ var { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize({
   dialect: 'mysql',
-  host: '127.0.0.1',
+  host: process.env.NODE_ENV === 'docker' ? 'docker-todo-mysql' : '127.0.0.1',
   username: 'root',
   password: '123456',
   database: 'docker_todo_list'
