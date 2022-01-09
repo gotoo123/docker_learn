@@ -35,7 +35,10 @@ const App = () => {
 
   const addNewTodo = async() => {
     // 添加新的todo
-    await http.post('/todo');
+    await http.post('/todo', {
+      title: newTodoTitle,
+      status: 'todo',
+    });
     // 更新
     await fetchTodoList();
   }
