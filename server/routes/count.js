@@ -19,3 +19,5 @@ router.post('/', async(req, res) => {
 })
 
 module.exports = router;
+
+// docker run -p xxx:xxx --name some-redis -d redis
